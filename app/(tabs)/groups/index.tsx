@@ -20,7 +20,11 @@ export default function GroupsScreen() {
   };
 
   const handleGroupPress = (id: string) => {
-    router.push(`/groups/${id}`);
+    // Use proper type syntax for Expo Router
+    router.push({
+      pathname: "/groups/[id]",
+      params: { id }
+    });
   };
 
   const handleAddGroup = () => {
